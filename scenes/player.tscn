@@ -4,3 +4,5 @@
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ax4d7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

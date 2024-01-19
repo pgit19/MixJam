@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bft4bqnufpdtk"]
+
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_02jk5"]
+
+[node name="HealthBar" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_02jk5")
+
+[node name="DelayedProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+step = 0.01
+value = 60.0
+nine_patch_stretch = true
+stretch_margin_left = 9
+stretch_margin_top = 9
+stretch_margin_right = 9
+stretch_margin_bottom = 9
+tint_under = Color(0.305882, 0.305882, 0.305882, 1)
+tint_progress = Color(0.956863, 0.690196, 0.235294, 0.882353)
+
+[node name="HealthProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+step = 0.1
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 9
+stretch_margin_top = 9
+stretch_margin_right = 9
+stretch_margin_bottom = 9
+tint_over = Color(0.337255, 0.415686, 0.537255, 1)
+tint_progress = Color(0.741176, 0.121569, 0.247059, 1)
