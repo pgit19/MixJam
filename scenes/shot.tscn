@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7a0tb7nedup7"]
+[gd_scene load_steps=3 format=3 uid="uid://c7a0tb7nedup7"]
 
 [ext_resource type="Script" path="res://scripts/shot.gd" id="1_j7ie1"]
+[ext_resource type="Texture2D" uid="uid://ctc7m3nvysgtq" path="res://assets/perfectly_scaled_crosshair_made_by_niklas_and_moritz.png" id="2_3ifwc"]
 
 [node name="Shot" type="Node2D"]
 script = ExtResource("1_j7ie1")
+
+[node name="CrosshairSprite" type="Sprite2D" parent="."]
+position = Vector2(2, 2)
+texture = ExtResource("2_3ifwc")

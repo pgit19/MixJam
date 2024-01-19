@@ -1,11 +1,29 @@
-extends Node2D
+class_name Shot extends Node2D
+
+@onready var crosshair_sprite : Sprite2D = $CrosshairSprite
+
+var direction : Vector2
+var current_target_position : Vector2
+var crosshair_move_speed : float = 300
 
 
-# Called when the node enters the scene tree for the first time.
+func set_up(p_position : Vector2, p_direction : Vector2):
+	position = p_position
+	direction = p_direction
+
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
+
+
+func _physics_process(delta):
+	move_target_position_along_direction(delta)
+	set_crosshair_sprite_to_target_position()
+
+
+func move_target_position_along_direction(delta : float):
+	current_target_position += direction * crosshair_move_speed * delta
+
+
+func set_crosshair_sprite_to_target_position():
+	crosshair_sprite.set_position(current_target_position)
