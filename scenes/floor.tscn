@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4dx2gld27nff"]
+
+[ext_resource type="Script" path="res://scripts/floor.gd" id="1_gunpx"]
+
+[node name="Floor" type="Node2D"]
+script = ExtResource("1_gunpx")
