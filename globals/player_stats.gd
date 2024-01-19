@@ -10,3 +10,5 @@ var health : float:
 		health_changed.emit(health)
 	get:
 		return health
+
+var move_speed : float = 300
