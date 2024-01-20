@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjm8k05cuagwg"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_xfwm4"]
-[ext_resource type="Texture2D" uid="uid://c4e4ebvnov1o" path="res://assets/animation/mortar_shell_1.png" id="2_s28ce"]
-[ext_resource type="Texture2D" uid="uid://b6locjtd21250" path="res://assets/animation/mortar_shell_2.png" id="3_dbjqn"]
-[ext_resource type="Texture2D" uid="uid://dixtkooela515" path="res://assets/animation/mortar_shell_3.png" id="4_qg4lc"]
-[ext_resource type="Texture2D" uid="uid://cvh057g6u323i" path="res://assets/animation/mortar_shell_4.png" id="5_enjui"]
-[ext_resource type="Texture2D" uid="uid://bg15qur7sject" path="res://assets/animation/mortar_shell_5.png" id="6_qi7cq"]
-[ext_resource type="Texture2D" uid="uid://covpk5ca5cxyt" path="res://assets/animation/mortar_shell_6.png" id="7_qjcks"]
+[ext_resource type="Texture2D" uid="uid://kjfjukh8gb8l" path="res://assets/animation/mortar_shell_1.png" id="2_s28ce"]
+[ext_resource type="Texture2D" uid="uid://dv6mgrfkfgl02" path="res://assets/animation/mortar_shell_2.png" id="3_dbjqn"]
+[ext_resource type="Texture2D" uid="uid://bopqlikw0hin7" path="res://assets/animation/mortar_shell_3.png" id="4_qg4lc"]
+[ext_resource type="Texture2D" uid="uid://bb6i8tyee7jbw" path="res://assets/animation/mortar_shell_4.png" id="5_enjui"]
+[ext_resource type="Texture2D" uid="uid://dxle7pqcoqm8i" path="res://assets/animation/mortar_shell_5.png" id="6_qi7cq"]
+[ext_resource type="Texture2D" uid="uid://dgurc20yvr4wr" path="res://assets/animation/mortar_shell_6.png" id="7_qjcks"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i6ar7"]
 animations = [{
