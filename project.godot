@@ -20,6 +20,7 @@ PlayerStats="*res://globals/player_stats.gd"
 Utils="*res://globals/utils.gd"
 Preloads="*res://globals/preloads.gd"
 Enums="*res://globals/enums.gd"
+CombatUtils="*res://globals/combat_utils.gd"
 
 [display]
 
