@@ -6,14 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="4_k5v70"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5rda"]
+radius = 88.0227
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ax4d7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_v5rda")
+[node name="Tank" type="Node2D" parent="."]
 
-[node name="TANKBASE" type="Sprite2D" parent="."]
+[node name="TANKBASE" type="Sprite2D" parent="Tank"]
 position = Vector2(0, -4)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_mo8e1")
@@ -25,6 +25,9 @@ position = Vector2(18, -2)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_03dmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v5rda")
 
 [node name="Container" type="Container" parent="."]
 custom_minimum_size = Vector2(5, 0)
