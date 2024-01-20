@@ -1,3 +1,3 @@
 extends Node
 
-enum SceneInterfaceType {MENU, GAME}
+enum SceneInterfaceType {MENU, GAME, DEATH_SCREEN}

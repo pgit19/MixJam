@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0uf1ckbyudf3"]
+
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_ik7xt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y5cha"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ik7xt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+modulate = Color(0.815686, 0.415686, 0.513726, 1)
+position = Vector2(961.75, 543.75)
+scale = Vector2(1924.5, 1088.5)
+mesh = SubResource("QuadMesh_y5cha")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "You died!"
+horizontal_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Try again"
+
+[node name="BackToMenuButtoon" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Back to Menu"

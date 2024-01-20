@@ -11,6 +11,8 @@ func set_current_scene_interface(p_scene_interface_type : Enums.SceneInterfaceTy
 			set_up_scene(Preloads.game_scene)
 		Enums.SceneInterfaceType.MENU:
 			set_up_scene(Preloads.menu_scene)
+		Enums.SceneInterfaceType.DEATH_SCREEN:
+			set_up_scene(Preloads.death_screen_scene)
 
 
 func set_up_scene(p_scene : PackedScene):
