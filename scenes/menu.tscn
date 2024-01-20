@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy7kskoypnljb"]
+[gd_scene load_steps=5 format=3 uid="uid://cy7kskoypnljb"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_1jrey"]
+[ext_resource type="FontFile" uid="uid://d0k7xh7wupkxq" path="res://assets/comica-bd.regular.ttf" id="2_nxohl"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hud02"]
+
+[sub_resource type="Theme" id="Theme_273ov"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -29,15 +32,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 300
-theme_override_constants/margin_top = 400
+theme_override_constants/margin_top = 300
 theme_override_constants/margin_right = 300
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nxohl")
+theme_override_font_sizes/font_size = 128
+text = "Game Title"
+horizontal_alignment = 1
+
 [node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_273ov")
 theme_override_font_sizes/font_size = 64
 text = "Play"
 

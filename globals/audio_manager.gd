@@ -21,7 +21,6 @@ func play_sound_at_position(p_stream : AudioStream, p_position : Vector2):
 
 func play_global_sound(p_stream : AudioStream):
 	var audio_stream_player = AudioStreamPlayer.new()
-	print(audio_stream_player.get_bus())
 	audio_stream_player.set_stream(p_stream)
 	audio_stream_player.finished.connect(_on_finished_playing_audio.bind(audio_stream_player))
 	add_child(audio_stream_player)
