@@ -21,6 +21,7 @@ Utils="*res://globals/utils.gd"
 Preloads="*res://globals/preloads.gd"
 Enums="*res://globals/enums.gd"
 CombatUtils="*res://globals/combat_utils.gd"
+TurnManager="*res://globals/turn_manager.gd"
 
 [display]
 

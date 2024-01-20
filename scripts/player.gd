@@ -1,6 +1,6 @@
 class_name Player extends Character
 
-enum State {MOVING, SHOOTING}
+enum State {MOVING, SHOOTING, INACTIVE}
 
 @onready var turret = $Turret
 @onready var tank = $Tank
@@ -9,14 +9,16 @@ var direction := Vector2.RIGHT
 var current_state := State.MOVING
 
 func _ready():
+	TurnManager.player_turn_started.connect(_on_turn_started)
 	PlayerStats.health = PlayerStats.max_health
 
 
 func _physics_process(delta):
-	if current_state == State.MOVING:
-		handle_movement_input(delta)
-	handle_shot_input()
-	move_and_slide()
+	if not current_state == State.INACTIVE:
+		if current_state == State.MOVING:
+			handle_movement_input(delta)
+		handle_shot_input()
+		move_and_slide()
 
 
 func handle_movement_input(delta):
@@ -62,3 +64,11 @@ func shoot():
 func release_shot():
 	current_state = State.MOVING
 	shot_released.emit()
+	print("Player Turn ended")
+	TurnManager.end_turn()
+	current_state = State.INACTIVE
+
+
+func _on_turn_started():
+	print("Player Turn Started")
+	current_state = State.MOVING
