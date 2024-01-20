@@ -35,7 +35,7 @@ func shoot():
 	current_state = State.SHOOTING
 	velocity = Vector2.ZERO
 	var shot_instance : Shot = Preloads.shot_scene.instantiate()
-	shot_instance.set_up(position, Utils.get_mouse_direction_relative_to_position(position), self)
+	shot_instance.set_up(self, Utils.get_mouse_direction_relative_to_position(position))
 	game_instance.add_child(shot_instance)
 
 

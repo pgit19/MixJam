@@ -4,11 +4,11 @@ class_name Shot extends Node2D
 
 var direction : Vector2
 var current_target_position : Vector2
-var crosshair_move_speed : float = 300
+var crosshair_move_speed : float = 500
 
 
-func set_up(p_position : Vector2, p_direction : Vector2, p_signal_host : Character):
-	position = p_position
+func set_up(p_signal_host : Character, p_direction : Vector2):
+	position = p_signal_host.position
 	direction = p_direction
 	p_signal_host.shot_released.connect(_on_shot_released, 4)
 
