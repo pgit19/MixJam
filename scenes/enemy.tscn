@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://b703qsixvs1ac"]
+[gd_scene load_steps=4 format=3 uid="uid://b703qsixvs1ac"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_u7cmu"]
+[ext_resource type="Texture2D" uid="uid://c3n5lewrsyy3i" path="res://assets/mortar_base.png" id="2_auqme"]
+[ext_resource type="Texture2D" uid="uid://ysx12t6kfjbg" path="res://assets/mortar.png" id="3_trxo7"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_u7cmu")
+mortar_rotation_speed = 1.0
+
+[node name="BUNKERSPRITE" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("2_auqme")
+
+[node name="Mortar" type="Node2D" parent="."]
+
+[node name="MORTARSPRITE" type="Sprite2D" parent="Mortar"]
+scale = Vector2(6, 6)
+texture = ExtResource("3_trxo7")
+
+[node name="Camera2D" type="Camera2D" parent="."]

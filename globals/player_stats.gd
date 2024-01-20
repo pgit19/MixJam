@@ -4,6 +4,8 @@ signal health_changed
 
 var max_health = 100
 
+var player_pos = Vector2(-10, -10)
+
 var health : float:
 	set(p_health):
 		health = clamp(p_health, 0, max_health)

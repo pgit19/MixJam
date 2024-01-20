@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqsgu2lnifmhm"
-path="res://.godot/imported/perfectly_scaled_crosshair_made_by_niklas_and_moritz.png-0071b057627c40da3aa1d86525e203b6.ctex"
+uid="uid://ysx12t6kfjbg"
+path="res://.godot/imported/mortar.png-d51be79815f2a87efee948ebc3523317.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/perfectly_scaled_crosshair_made_by_niklas_and_moritz.png"
-dest_files=["res://.godot/imported/perfectly_scaled_crosshair_made_by_niklas_and_moritz.png-0071b057627c40da3aa1d86525e203b6.ctex"]
+source_file="res://assets/mortar.png"
+dest_files=["res://.godot/imported/mortar.png-d51be79815f2a87efee948ebc3523317.ctex"]
 
 [params]
 
