@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xfhvn2seivdw"]
+[gd_scene load_steps=5 format=3 uid="uid://xfhvn2seivdw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ax4d7"]
-[ext_resource type="Texture2D" uid="uid://bblu8hsg2gh1t" path="res://assets/tank.png" id="2_fp6lx"]
+[ext_resource type="Texture2D" uid="uid://b855bvumjv6un" path="res://assets/tank_base.png" id="2_mo8e1"]
+[ext_resource type="Texture2D" uid="uid://8ihp67kj6g5m" path="res://assets/tank_turret.png" id="3_03dmv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5rda"]
 
@@ -11,6 +12,15 @@ script = ExtResource("1_ax4d7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v5rda")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TANKBASE" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
-texture = ExtResource("2_fp6lx")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mo8e1")
+
+[node name="Turret" type="Node2D" parent="."]
+
+[node name="TANKTURRET" type="Sprite2D" parent="Turret"]
+position = Vector2(18, -2)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_03dmv")
