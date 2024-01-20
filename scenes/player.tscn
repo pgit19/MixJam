@@ -31,10 +31,14 @@ shape = SubResource("CircleShape2D_v5rda")
 
 [node name="Container" type="Container" parent="."]
 custom_minimum_size = Vector2(5, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -150.0
-offset_top = 150.0
+offset_top = 120.0
 offset_right = 150.0
-offset_bottom = 155.0
+offset_bottom = 130.0
+grow_horizontal = 2
 
 [node name="HealthBar" parent="Container" instance=ExtResource("4_k5v70")]
 clip_contents = true
