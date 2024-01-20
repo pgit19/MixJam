@@ -29,7 +29,7 @@ func handle_shot_input():
 		shoot()
 	elif Input.is_action_just_released("space"):
 		release_shot()
-		
+
 
 func shoot():
 	current_state = State.SHOOTING

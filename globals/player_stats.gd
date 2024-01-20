@@ -4,6 +4,7 @@ signal health_changed
 
 var max_health = 100
 
+#TODO Player Pos
 var player_pos = Vector2(-10, -10)
 
 var health : float:
