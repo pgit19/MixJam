@@ -6,8 +6,10 @@ signal enemy_turn_started
 var current_turn : Enums.Turn
 
 func _ready():
-	current_turn = Enums.Turn.PLAYER
+	reset()
 
+func reset():
+	current_turn = Enums.Turn.PLAYER
 
 func end_turn():
 	match current_turn:

@@ -9,6 +9,7 @@ func set_current_scene_interface(p_scene_interface_type : Enums.SceneInterfaceTy
 	match p_scene_interface_type:
 		Enums.SceneInterfaceType.GAME:
 			set_up_scene(Preloads.game_scene)
+			TurnManager.reset()
 		Enums.SceneInterfaceType.MENU:
 			set_up_scene(Preloads.menu_scene)
 		Enums.SceneInterfaceType.DEATH_SCREEN:
