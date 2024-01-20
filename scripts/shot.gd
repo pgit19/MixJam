@@ -30,6 +30,12 @@ func set_crosshair_sprite_to_target_position():
 	crosshair_sprite.set_position(current_target_position)
 
 
+func instantiate_bullet():
+	var bullet_instance : Bullet = Preloads.bullet_scene.instantiate()
+	bullet_instance.set_up(position, position + current_target_position)
+	get_parent().add_child(bullet_instance)
+	
+
 func _on_shot_released():
-	print("Release")
+	instantiate_bullet()
 	queue_free()

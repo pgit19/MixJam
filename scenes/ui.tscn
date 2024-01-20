@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuqsfqc07feiu"]
+[gd_scene load_steps=3 format=3 uid="uid://cuqsfqc07feiu"]
 
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_7gug2"]
 [ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="2_qfj8n"]
-[ext_resource type="Script" path="res://scripts/health_bar.gd" id="3_6jgyj"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -13,23 +12,5 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7gug2")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HealthBar" parent="." instance=ExtResource("2_qfj8n")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HealthBar" parent="HBoxContainer" instance=ExtResource("2_qfj8n")]
-layout_mode = 2
-size_flags_horizontal = 3
-bar_color = Color(0.74, 0.12, 0.24, 1)
-diff_color = Color(0.949, 0.69, 0.23, 0.88)
-
-[node name="FuelBar" type="Control" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("3_6jgyj")
-bar_color = Color(0, 0.341176, 0.835294, 1)
-diff_color = Color(0.279183, 0.541853, 1, 0.88)
