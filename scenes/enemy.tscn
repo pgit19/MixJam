@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_u7cmu"]
 [ext_resource type="Texture2D" uid="uid://dspgyqmybsijy" path="res://assets/bunker_base.png" id="2_6wknf"]
 [ext_resource type="Texture2D" uid="uid://bcxi4f8b30384" path="res://assets/bunker_mortar.png" id="3_ius2h"]
-[ext_resource type="PackedScene" path="res://scenes/health_bar.tscn" id="4_ainl4"]
+[ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="4_ainl4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jvby0"]
 radius = 254.0
