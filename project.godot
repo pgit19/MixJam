@@ -23,6 +23,7 @@ Enums="*res://globals/enums.gd"
 CombatUtils="*res://globals/combat_utils.gd"
 TurnManager="*res://globals/turn_manager.gd"
 ZIndex="*res://globals/z_index.gd"
+AudioManager="*res://globals/audio_manager.gd"
 
 [display]
 

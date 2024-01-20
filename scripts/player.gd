@@ -3,6 +3,8 @@ class_name Player extends Character
 
 enum State {MOVING, SHOOTING, INACTIVE}
 
+@export var engine_sound : AudioStream
+
 @onready var turret = $Turret
 @onready var tank = $Tank
 
@@ -12,6 +14,8 @@ var current_state := State.MOVING
 
 func _ready():
 	TurnManager.player_turn_started.connect(_on_turn_started)
+	#TODO: Make able to update sound position
+	AudioManager.play_global_sound(engine_sound)
 	PlayerStats.health = PlayerStats.max_health
 	PlayerStats.fuel = PlayerStats.max_fuel
 
@@ -37,7 +41,7 @@ func handle_turret_rotation(delta):
 func handle_shot_input():
 	if Input.is_action_just_pressed("left_click"):
 		shoot()
-	elif Input.is_action_just_released("left_click"):
+	elif Input.is_action_just_released("left_click") and current_state == State.SHOOTING:
 		release_shot()
 
 
@@ -68,6 +72,7 @@ func release_shot():
 	current_state = State.MOVING
 	shot_released.emit()
 	print("Player Turn ended")
+	AudioManager.play_sound_at_position(shot_sound, position)
 	TurnManager.end_turn()
 	current_state = State.INACTIVE
 

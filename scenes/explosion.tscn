@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://wxsj3i65e0wg"]
+[gd_scene load_steps=5 format=3 uid="uid://wxsj3i65e0wg"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_ylu0e"]
+[ext_resource type="AudioStream" uid="uid://df7i4cvo2w0xf" path="res://assets/explosion-6055.mp3" id="2_33k4h"]
 [ext_resource type="Texture2D" uid="uid://r44fviimth7x" path="res://assets/explosion_mock.png" id="2_gands"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_to8x0"]
@@ -9,6 +10,7 @@ radius = 100.0
 [node name="Explosion" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_ylu0e")
+explosion_sound = ExtResource("2_33k4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_to8x0")
