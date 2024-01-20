@@ -1,6 +1,8 @@
 class_name HealthBar extends Control
 
 @export var ui_theme : Theme
+@export var bar_color : Color
+@export var diff_color : Color
 
 @onready var health_progress_bar = $HealthProgressBar
 @onready var delayed_progess_bar = $DelayedProgressBar
@@ -9,6 +11,8 @@ const delayed_progress_bar_speed_per_second : float = 2.5
 
 
 func _ready():
+	$DelayedProgressBar.tint_progress = diff_color
+	$HealthProgressBar.tint_progress = bar_color
 	if ui_theme:
 		theme = ui_theme
 
