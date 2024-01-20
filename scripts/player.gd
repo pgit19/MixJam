@@ -35,9 +35,9 @@ func handle_turret_rotation(delta):
 	
 
 func handle_shot_input():
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("left_click"):
 		shoot()
-	elif Input.is_action_just_released("space"):
+	elif Input.is_action_just_released("left_click"):
 		release_shot()
 
 

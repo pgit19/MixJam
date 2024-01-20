@@ -2,9 +2,6 @@ extends Node2D
 
 @onready var player = get_parent().get_node("Player")
 
-func _process(delta):
-	print(player.position)
-
 func _ready():
 	TurnManager.enemy_turn_started.connect(_on_turn_started)
 	

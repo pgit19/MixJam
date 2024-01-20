@@ -11,6 +11,7 @@ const delayed_progress_bar_speed_per_second : float = 2.5
 
 
 func _ready():
+	z_index = ZIndex.health_bar
 	health_progress_bar.set_tint_progress(bar_color)
 	delayed_progess_bar.set_tint_progress(diff_color)
 	
