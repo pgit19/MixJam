@@ -8,9 +8,22 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7gug2")
 
-[node name="HealthBar" parent="." instance=ExtResource("2_qfj8n")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FuelBar" parent="HBoxContainer" instance=ExtResource("2_qfj8n")]
+layout_mode = 2
+size_flags_horizontal = 3
+bar_color = Color(0, 0.341176, 0.835294, 1)
+diff_color = Color(0.278431, 0.541176, 1, 0.878431)
