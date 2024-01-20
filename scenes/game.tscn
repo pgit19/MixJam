@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct8yxoe8s2d08"]
+[gd_scene load_steps=6 format=3 uid="uid://ct8yxoe8s2d08"]
 
 [ext_resource type="PackedScene" uid="uid://b4dx2gld27nff" path="res://scenes/floor.tscn" id="1_7ewym"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_cq1ay"]
 [ext_resource type="PackedScene" uid="uid://c58vxsxhuimqu" path="res://scenes/player_follow_camera.tscn" id="1_ng4qr"]
 [ext_resource type="PackedScene" uid="uid://xfhvn2seivdw" path="res://scenes/player.tscn" id="1_tqfee"]
 [ext_resource type="PackedScene" uid="uid://cuqsfqc07feiu" path="res://scenes/ui.tscn" id="3_7v28a"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_cq1ay")
 
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("1_ng4qr")]
 
@@ -16,3 +18,5 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Ui" parent="CanvasLayer" instance=ExtResource("3_7v28a")]
+offset_top = -4.5
+offset_bottom = -13.5

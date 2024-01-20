@@ -13,30 +13,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1jrey")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
 modulate = Color(0.764706, 0.494118, 0.345098, 1)
 position = Vector2(960.017, 540.023)
-scale = Vector2(-1920.03, 1080.05)
+rotation = -3.14159
+scale = Vector2(1920.03, -1080.05)
 mesh = SubResource("QuadMesh_hud02")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 400
+theme_override_constants/margin_right = 300
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Quit"

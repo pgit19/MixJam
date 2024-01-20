@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuqsfqc07feiu"]
 
-[ext_resource type="Script" path="res://scenes/ui.gd" id="1_7gug2"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_mjm8y"]
 [ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="2_qfj8n"]
 
 [node name="Ui" type="Control"]
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7gug2")
+script = ExtResource("1_mjm8y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
