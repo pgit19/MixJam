@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy7kskoypnljb"]
+[gd_scene load_steps=3 format=3 uid="uid://cy7kskoypnljb"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_1jrey"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hud02"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1jrey")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.764706, 0.494118, 0.345098, 1)
+position = Vector2(960.017, 540.023)
+scale = Vector2(-1920.03, 1080.05)
+mesh = SubResource("QuadMesh_hud02")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

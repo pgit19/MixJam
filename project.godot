@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 PlayerStats="*res://globals/player_stats.gd"
 Utils="*res://globals/utils.gd"
 Preloads="*res://globals/preloads.gd"
+Enums="*res://globals/enums.gd"
 
 [display]
 
