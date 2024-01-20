@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xfhvn2seivdw"]
+[gd_scene load_steps=6 format=3 uid="uid://xfhvn2seivdw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ax4d7"]
 [ext_resource type="Texture2D" uid="uid://b855bvumjv6un" path="res://assets/tank_base.png" id="2_mo8e1"]
 [ext_resource type="Texture2D" uid="uid://8ihp67kj6g5m" path="res://assets/tank_turret.png" id="3_03dmv"]
+[ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="4_k5v70"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5rda"]
 
@@ -24,3 +25,18 @@ position = Vector2(18, -2)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_03dmv")
+
+[node name="Container" type="Container" parent="."]
+custom_minimum_size = Vector2(5, 0)
+offset_left = -150.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 155.0
+
+[node name="HealthBar" parent="Container" instance=ExtResource("4_k5v70")]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bar_color = Color(0.741176, 0.121569, 0.247059, 1)
+diff_color = Color(0.956863, 0.690196, 0.235294, 0.882353)
