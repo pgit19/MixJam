@@ -25,6 +25,10 @@ Preloads="*res://globals/preloads.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[gui]
+
+theme/custom_font="res://assets/Big_Bottom_Typeface_Normal.ttf"
+
 [input]
 
 a={
