@@ -23,7 +23,8 @@ func _physics_process(delta):
 			drive_logic(delta)
 		else:
 			velocity = Vector2.ZERO
-		handle_turret_rotation(delta)
+		if not current_state == State.SHOOTING:
+			handle_turret_rotation(delta)
 		handle_shot_input()
 		move_and_slide()
 
