@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://csxbf2pkmp6hh"]
+
+[ext_resource type="FontFile" uid="uid://b6isupgymh4u" path="res://assets/Big_Bottom_Typeface_Normal.ttf" id="1_275c1"]
+[ext_resource type="Script" path="res://scripts/tutorial_popup.gd" id="1_op43o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3qs7"]
+font = ExtResource("1_275c1")
+font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_johkd"]
+font = ExtResource("1_275c1")
+font_size = 28
+
+[node name="TutorialPopup" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_op43o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 91.0
+offset_top = 93.0
+offset_right = 1834.0
+offset_bottom = 942.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Its your turn!"
+label_settings = SubResource("LabelSettings_i3qs7")
+horizontal_alignment = 1
+
+[node name="Container" type="Container" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Use  W-A-S-D to move.
+Moving consumes more fuel than doing nothing.
+End your turn with a shoot.
+Hold the (left mouse button  to aim to mouse position direktion"
+label_settings = SubResource("LabelSettings_johkd")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureButton" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_275c1")
+theme_override_font_sizes/font_size = 32
+text = "Ok"
