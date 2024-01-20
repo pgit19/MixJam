@@ -8,7 +8,6 @@ enum State {MOVING, SHOOTING}
 var direction := Vector2.RIGHT
 var current_state := State.MOVING
 
-
 func _ready():
 	PlayerStats.health = PlayerStats.max_health
 
@@ -26,7 +25,7 @@ func handle_movement_input(delta):
 
 func handle_turret_rotation(delta):
 	var dir_to_mouse = Utils.get_mouse_direction_relative_to_position(turret.global_position).angle()
-
+	
 	turret.global_rotation = rotate_toward(turret.global_rotation, dir_to_mouse, 3 * delta)
 	
 
