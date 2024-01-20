@@ -8,6 +8,7 @@ var bullet_duration: float = 700
 @onready var bullet_animation = $BULLETANIMATION
 @onready var bullet_timer = $bullet_timer
 
+
 func _ready():	
 	bullet_animation.play()
 	bullet_animation.speed_scale = bullet_speed_scale
@@ -26,7 +27,12 @@ func set_up(p_position: Vector2, p_target_position : Vector2):
 
 
 func _physics_process(_delta):
-	position = lerp(start_position, target_position, 1.0 - (bullet_timer.time_left / bullet_timer.wait_time))
+	var t = 1.0 - (bullet_timer.time_left / bullet_timer.wait_time)
+	var scale_factor = 0.15 + cos(PI / 2 - PI * t) * 0.3
+	
+	position = lerp(start_position, target_position, t)
+	
+	bullet_animation.scale = Vector2(scale_factor, scale_factor)
 	
 	#var tween = create_tween().set_parallel()
 	#tween.finished.connect(_on_tween_finished)
@@ -38,6 +44,7 @@ func spawn_explosion():
 	var explosion_instance = Preloads.explosion_scene.instantiate()
 	explosion_instance.position = position
 	get_parent().add_child(explosion_instance)
+
 
 func _on_bullet_timer_timeout():
 	spawn_explosion()
