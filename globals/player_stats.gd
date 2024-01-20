@@ -3,11 +3,22 @@ extends Node
 signal health_changed
 signal fuel_changed
 
+
+func _ready():
+	CombatUtils.character_damaged.connect(_on_character_damaged)
+
+
+func _on_character_damaged(p_damage : float, p_character : Character):
+	if p_character is Player:
+		health = max(health - p_damage, 0)
+
+
 var max_health = 100
 var max_fuel = 100
 
 #TODO Player Pos
 var player_pos = Vector2(-10, -10)
+
 
 var health : float:
 	set(p_health):

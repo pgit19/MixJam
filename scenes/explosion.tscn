@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://r44fviimth7x" path="res://assets/explosion_mock.png" id="2_gands"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_to8x0"]
-radius = 33.0151
+radius = 100.0
 
 [node name="Explosion" type="Area2D"]
 collision_layer = 0
@@ -14,4 +14,7 @@ script = ExtResource("1_ylu0e")
 shape = SubResource("CircleShape2D_to8x0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.741176, 0.427451, 0.113725, 1)
+position = Vector2(-1.01328e-06, -0.500004)
+scale = Vector2(3.15625, 3.10938)
 texture = ExtResource("2_gands")

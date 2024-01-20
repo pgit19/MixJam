@@ -1,4 +1,4 @@
-extends Character
+class_name Player extends Character
 
 enum State {MOVING, SHOOTING}
 
