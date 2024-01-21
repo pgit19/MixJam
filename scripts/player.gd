@@ -3,10 +3,9 @@ class_name Player extends Character
 
 enum State {MOVING, SHOOTING, INACTIVE}
 
-@export var engine_sound : AudioStream
-
 @onready var turret = $Turret
 @onready var tank = $Tank
+@onready var audio_player = $AudioStreamPlayer2D
 
 var direction := Vector2.RIGHT
 var current_state := State.MOVING
@@ -15,9 +14,9 @@ var current_state := State.MOVING
 func _ready():
 	TurnManager.player_turn_started.connect(_on_turn_started)
 	#TODO: Make able to update sound position
-	AudioManager.play_global_sound(engine_sound)
 	PlayerStats.health = PlayerStats.max_health
 	PlayerStats.fuel = PlayerStats.max_fuel
+	audio_player.play()
 
 
 func _physics_process(delta):
@@ -75,14 +74,18 @@ func release_shot():
 	AudioManager.play_sound_at_position(shot_sound, position)
 	TurnManager.end_turn()
 	current_state = State.INACTIVE
+	audio_player.stop()
 
 
 func use_fuel(delta : float):
 	var fuel_usage_per_second = 10 if velocity == Vector2.ZERO else 30
 	PlayerStats.fuel -= fuel_usage_per_second * delta
+	if PlayerStats.fuel <= 0:
+		audio_player.stop()
 
 
 func _on_turn_started():
 	print("Player Turn Started")
 	PlayerStats.fuel = PlayerStats.max_fuel
 	current_state = State.MOVING
+	audio_player.play()

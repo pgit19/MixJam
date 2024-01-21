@@ -13,7 +13,6 @@ radius = 88.0227
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ax4d7")
-engine_sound = ExtResource("2_vyu36")
 shot_sound = ExtResource("2_4wvpi")
 
 [node name="Tank" type="Node2D" parent="."]
@@ -56,3 +55,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 bar_color = Color(0.741176, 0.121569, 0.247059, 1)
 diff_color = Color(0.956863, 0.690196, 0.235294, 0.882353)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vyu36")
