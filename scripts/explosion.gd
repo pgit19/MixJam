@@ -1,11 +1,13 @@
 extends Area2D
 
 @export var explosion_sound : AudioStream
+@onready var animation = $Animation
 
 func _ready():
 	body_entered.connect(calculate_damage)
 	AudioManager.play_sound_at_position(explosion_sound, position)
-	await get_tree().create_timer(0.3).timeout
+	animation.play()
+	await get_tree().create_timer(1.5).timeout
 	queue_free()
 
 
