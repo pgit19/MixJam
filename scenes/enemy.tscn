@@ -13,6 +13,7 @@ script = ExtResource("1_u7cmu")
 mortar_rotation_speed = 1.0
 
 [node name="BUNKERSPRITE" type="Sprite2D" parent="."]
+position = Vector2(0, 20)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_6wknf")
 
@@ -42,6 +43,7 @@ texture = ExtResource("3_ius2h")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="coll" type="CollisionShape2D" parent="."]
+position = Vector2(2, 19)
 shape = SubResource("CircleShape2D_jvby0")
 
 [node name="PlayerRayCast" type="RayCast2D" parent="."]

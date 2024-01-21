@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbdem11unsgvn"]
+[gd_scene load_steps=16 format=3 uid="uid://cbdem11unsgvn"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_pnx3o"]
 [ext_resource type="Texture2D" uid="uid://b8irbhvek6mah" path="res://assets/floor_tile.png" id="2_p3g75"]
@@ -21,6 +21,9 @@ texture_region_size = Vector2i(512, 512)
 [sub_resource type="TileSet" id="TileSet_s3xac"]
 tile_size = Vector2i(512, 512)
 sources/0 = SubResource("TileSetAtlasSource_ab0b6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3temp"]
+size = Vector2(2229, 97)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_pnx3o")
@@ -121,3 +124,20 @@ position = Vector2(1709, -373)
 
 [node name="Obstacle01" parent="." instance=ExtResource("11_p5lem")]
 position = Vector2(1720, 379)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(720.5, 548)
+shape = SubResource("RectangleShape2D_3temp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(18, -1077)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(720.5, 548)
+shape = SubResource("RectangleShape2D_3temp")

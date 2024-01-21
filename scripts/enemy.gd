@@ -60,7 +60,7 @@ func shoot():
 
 
 func get_random_position_around_player():
-	var distance = randf_range(200, 600)
+	var distance = randf_range(250, 600)
 	var direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	return get_parent().get_player_position() + (direction * distance)
 

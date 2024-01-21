@@ -10,6 +10,7 @@ var bullet_duration: float = 1000
 
 
 func _ready():	
+	z_index = ZIndex.bullet
 	bullet_animation.play()
 	bullet_animation.speed_scale = bullet_speed_scale
 	bullet_timer.wait_time = (target_position - start_position).length() / bullet_duration

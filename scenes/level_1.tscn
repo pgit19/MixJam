@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbfdkhjfnafih"]
+[gd_scene load_steps=16 format=3 uid="uid://bbfdkhjfnafih"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_oyuwp"]
 [ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="2_gpmtx"]
@@ -13,14 +13,17 @@
 [ext_resource type="Texture2D" uid="uid://s6c47gvno2x7" path="res://assets/MicrosoftTeams-image-export.png" id="11_d37y6"]
 [ext_resource type="PackedScene" uid="uid://c821uhcst7ftm" path="res://scenes/obstacle_05.tscn" id="11_sssjf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3epl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_afrri"]
 texture = ExtResource("2_i0itl")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_gdvi0"]
 tile_size = Vector2i(512, 512)
-sources/1 = SubResource("TileSetAtlasSource_j3epl")
+sources/0 = SubResource("TileSetAtlasSource_afrri")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnc75"]
+size = Vector2(2229, 97)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_oyuwp")
@@ -31,7 +34,7 @@ rotation = 1.5708
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_gdvi0")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131075, 1, 0, -65539, 1, 0, -3, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, -131074, 1, 0, -65538, 1, 0, -2, 1, 0, 65534, 1, 0, 131070, 1, 0, 196606, 1, 0, -131073, 1, 0, -65537, 1, 0, -1, 1, 0, 65535, 1, 0, 131071, 1, 0, 196607, 1, 0, -196608, 1, 0, -131072, 1, 0, -65536, 1, 0, 0, 1, 0, 65536, 1, 0, 131072, 1, 0, -196607, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, -196606, 1, 0, -131070, 1, 0, -65534, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, -196605, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, -196604, 1, 0, -131068, 1, 0, -65532, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, -196603, 1, 0, -131067, 1, 0, -65531, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0)
+layer_0/tile_data = PackedInt32Array(-131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0)
 
 [node name="EnemyContainer" parent="." instance=ExtResource("2_gpmtx")]
 
@@ -115,3 +118,20 @@ position = Vector2(1679, 376)
 
 [node name="Obstacle05" parent="." instance=ExtResource("10_43fsv")]
 position = Vector2(483, 383)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(720.5, 548)
+shape = SubResource("RectangleShape2D_hnc75")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(18, -1077)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(720.5, 548)
+shape = SubResource("RectangleShape2D_hnc75")

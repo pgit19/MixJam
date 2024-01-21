@@ -4,6 +4,7 @@ extends Area2D
 @onready var animation = $Animation
 
 func _ready():
+	z_index = ZIndex.explosion
 	body_entered.connect(calculate_damage)
 	AudioManager.play_sound_at_position(explosion_sound, position)
 	animation.play()
