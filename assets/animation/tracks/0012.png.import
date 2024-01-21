@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://covpk5ca5cxyt"
-path="res://.godot/imported/mortar_shell_6.png-850c427d97cf28eb9b2c56d220fe3974.ctex"
+uid="uid://uv4e7xg5dniy"
+path="res://.godot/imported/0012.png-4f6dfb798b21aad5d4d9cd646f8ce804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animation/mortar_shell_6.png"
-dest_files=["res://.godot/imported/mortar_shell_6.png-850c427d97cf28eb9b2c56d220fe3974.ctex"]
+source_file="res://assets/animation/tracks/0012.png"
+dest_files=["res://.godot/imported/0012.png-4f6dfb798b21aad5d4d9cd646f8ce804.ctex"]
 
 [params]
 

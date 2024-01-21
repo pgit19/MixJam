@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dixtkooela515"
-path="res://.godot/imported/mortar_shell_3.png-7e4027143ede2748d3b8fda07b1e38ad.ctex"
+uid="uid://bmpr0nlla553p"
+path="res://.godot/imported/0019.png-b85618abe70b84464e16f4b6969f3a68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animation/mortar_shell_3.png"
-dest_files=["res://.godot/imported/mortar_shell_3.png-7e4027143ede2748d3b8fda07b1e38ad.ctex"]
+source_file="res://assets/animation/wind_up_key/0019.png"
+dest_files=["res://.godot/imported/0019.png-b85618abe70b84464e16f4b6969f3a68.ctex"]
 
 [params]
 
