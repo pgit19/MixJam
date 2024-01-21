@@ -6,6 +6,9 @@ var direction : Vector2
 var current_target_position : Vector2
 var crosshair_move_speed : float = 500
 
+const max_shot_distance = 800
+const crosshair_acceleration_factor = 1.03
+
 
 func set_up(p_signal_host : Character, p_direction : Vector2):
 	position = p_signal_host.position
@@ -17,12 +20,13 @@ func set_up(p_signal_host : Character, p_direction : Vector2):
 func _physics_process(delta):
 	move_target_position_along_direction(delta)
 	set_crosshair_sprite_to_target_position()
+	if position.distance_to(current_target_position + position) >= max_shot_distance:
+		_on_shot_released()
 
 
 func move_target_position_along_direction(delta : float):
-	var exp_weight_factor = position.distance_to(current_target_position) * 0.003
-	
-	current_target_position += direction * crosshair_move_speed * exp(exp_weight_factor * 0.5) * delta
+	crosshair_move_speed *= crosshair_acceleration_factor
+	current_target_position += direction * crosshair_move_speed * delta
 
 
 func set_crosshair_sprite_to_target_position():

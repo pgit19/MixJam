@@ -12,6 +12,7 @@
 radius = 88.0227
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_ax4d7")
 shot_sound = ExtResource("2_4wvpi")
 

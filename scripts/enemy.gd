@@ -4,6 +4,7 @@ extends Character
 @export var max_distance: float = 50.0
 @export var mortar_rotation_speed: float = 3.0
 @onready var mortar = $Mortar
+@onready var player_ray_cast = $PlayerRayCast
 var is_rotating: bool = false
 
 
@@ -27,6 +28,7 @@ func rotate_towards_approx_position(approx_position, delta):
 	
 	
 func _process(delta):
+	point_ray_cast_towards_player()
 	ai_behaviour(delta)
 
 
@@ -37,4 +39,7 @@ func ai_behaviour(delta):
 
 func release_shot():
 	shot_released.emit()
+	
 
+func point_ray_cast_towards_player():
+	player_ray_cast.set_target_position(get_parent().get_player_position() - position)
