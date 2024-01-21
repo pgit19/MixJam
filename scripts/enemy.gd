@@ -47,8 +47,14 @@ func point_ray_cast_towards_player():
 
 func shoot():
 	var can_see_player : bool = false if player_ray_cast.is_colliding() else true
-	var shot_position = get_parent().get_player_position()
+	var shot_position = get_parent().get_player_position() if can_see_player else get_random_position_around_player()
 	instantiate_bullet(shot_position)
+
+
+func get_random_position_around_player():
+	var distance = randf_range(200, 600)
+	var direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	return get_parent().get_player_position() + (direction * distance)
 
 
 func instantiate_bullet(p_target_position):
