@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbfdkhjfnafih"]
+[gd_scene load_steps=8 format=3 uid="uid://bbfdkhjfnafih"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_oyuwp"]
 [ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="2_gpmtx"]
 [ext_resource type="PackedScene" uid="uid://632cjv3mdkeq" path="res://scenes/finish_area.tscn" id="3_0w1eo"]
 [ext_resource type="PackedScene" uid="uid://b703qsixvs1ac" path="res://scenes/enemy.tscn" id="3_t74u2"]
+[ext_resource type="PackedScene" uid="uid://c1x5gbhigxvm2" path="res://scenes/finish_area_gate.tscn" id="5_cpvsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlsd0"]
 size = Vector2(20, 39.6)
@@ -35,3 +36,6 @@ shape = SubResource("RectangleShape2D_tlsd0")
 position = Vector2(0.999998, -49.5)
 scale = Vector2(100, 197)
 mesh = SubResource("QuadMesh_rsmvf")
+
+[node name="FinishAreaGate" parent="." instance=ExtResource("5_cpvsj")]
+position = Vector2(278, -3)

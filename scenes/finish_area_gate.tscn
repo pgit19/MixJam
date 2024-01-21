@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1x5gbhigxvm2"]
+
+[ext_resource type="Script" path="res://scripts/finish_area_gate.gd" id="1_50sw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekboy"]
+size = Vector2(50, 200)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3eni7"]
+size = Vector2(50, 200)
+
+[node name="FinishAreaGate" type="Node2D"]
+script = ExtResource("1_50sw5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ekboy")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(0.615686, 0.4, 0.168627, 1)
+mesh = SubResource("QuadMesh_3eni7")
