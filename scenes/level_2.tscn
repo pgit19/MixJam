@@ -1,13 +1,123 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbdem11unsgvn"]
+[gd_scene load_steps=15 format=3 uid="uid://cbdem11unsgvn"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_pnx3o"]
+[ext_resource type="Texture2D" uid="uid://b8irbhvek6mah" path="res://assets/floor_tile.png" id="2_p3g75"]
 [ext_resource type="PackedScene" uid="uid://632cjv3mdkeq" path="res://scenes/finish_area.tscn" id="2_wk1ds"]
 [ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="3_pr8c8"]
+[ext_resource type="PackedScene" uid="uid://b703qsixvs1ac" path="res://scenes/enemy.tscn" id="4_2pa2d"]
+[ext_resource type="PackedScene" uid="uid://c1x5gbhigxvm2" path="res://scenes/finish_area_gate.tscn" id="4_lx8wa"]
+[ext_resource type="PackedScene" uid="uid://v451xnfmpbc5" path="res://scenes/obstacle_02.tscn" id="7_bc2fk"]
+[ext_resource type="PackedScene" uid="uid://bxjxe0dpkhiqu" path="res://scenes/obstacle_04.tscn" id="8_w81gy"]
+[ext_resource type="PackedScene" uid="uid://dtn11yq3bpnwf" path="res://scenes/obstacle_03.tscn" id="9_eu26k"]
+[ext_resource type="Texture2D" uid="uid://s6c47gvno2x7" path="res://assets/MicrosoftTeams-image-export.png" id="10_s3kld"]
+[ext_resource type="PackedScene" uid="uid://d4b6bnry1qpth" path="res://scenes/obstacle_01.tscn" id="11_p5lem"]
+[ext_resource type="PackedScene" uid="uid://c821uhcst7ftm" path="res://scenes/obstacle_05.tscn" id="12_ekd7f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ab0b6"]
+texture = ExtResource("2_p3g75")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_s3xac"]
+tile_size = Vector2i(512, 512)
+sources/0 = SubResource("TileSetAtlasSource_ab0b6")
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_pnx3o")
 
-[node name="FinishArea" parent="." instance=ExtResource("2_wk1ds")]
-position = Vector2(-304, -4)
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -3)
+rotation = 1.5708
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_s3xac")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, -196603, 0, 0, -131067, 0, 0, -65531, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0)
 
 [node name="EnemyContainer" parent="." instance=ExtResource("3_pr8c8")]
+
+[node name="Enemy" parent="EnemyContainer" instance=ExtResource("4_2pa2d")]
+position = Vector2(743, -369)
+
+[node name="Enemy2" parent="EnemyContainer" instance=ExtResource("4_2pa2d")]
+position = Vector2(-120, 328)
+
+[node name="Enemy3" parent="EnemyContainer" instance=ExtResource("4_2pa2d")]
+position = Vector2(919, 265)
+
+[node name="FinishAreaGate" parent="." instance=ExtResource("4_lx8wa")]
+position = Vector2(1655, -2)
+
+[node name="FinishArea" parent="." instance=ExtResource("2_wk1ds")]
+position = Vector2(1800, 0)
+
+[node name="Obstacle02" parent="." instance=ExtResource("7_bc2fk")]
+position = Vector2(257, -264)
+
+[node name="Obstacle03" parent="." instance=ExtResource("7_bc2fk")]
+position = Vector2(-124, 134)
+
+[node name="Obstacle04" parent="." instance=ExtResource("8_w81gy")]
+position = Vector2(1535, 290)
+scale = Vector2(0.3, 0.3)
+
+[node name="Obstacle05" parent="." instance=ExtResource("9_eu26k")]
+position = Vector2(608, 204)
+
+[node name="MicrosoftTeams-image-export" type="Sprite2D" parent="."]
+position = Vector2(438, -1872)
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export2" type="Sprite2D" parent="."]
+position = Vector2(426, -1872)
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export5" type="Sprite2D" parent="."]
+position = Vector2(-1027, -1876)
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export3" type="Sprite2D" parent="."]
+position = Vector2(428, 1882)
+rotation = 3.14159
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export6" type="Sprite2D" parent="."]
+position = Vector2(-979, 1878)
+rotation = 3.14159
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export4" type="Sprite2D" parent="."]
+position = Vector2(1883, 1882)
+rotation = 3.14159
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="MicrosoftTeams-image-export7" type="Sprite2D" parent="."]
+position = Vector2(1879, -1867)
+scale = Vector2(5, 5)
+texture = ExtResource("10_s3kld")
+
+[node name="Obstacle06" parent="." instance=ExtResource("11_p5lem")]
+position = Vector2(-305, 423)
+
+[node name="Obstacle07" parent="." instance=ExtResource("7_bc2fk")]
+position = Vector2(-299, 255)
+
+[node name="Obstacle08" parent="." instance=ExtResource("9_eu26k")]
+position = Vector2(-299, 101)
+
+[node name="Obstacle09" parent="." instance=ExtResource("11_p5lem")]
+position = Vector2(-303, -88)
+
+[node name="Obstacle10" parent="." instance=ExtResource("12_ekd7f")]
+position = Vector2(-413, -351)
+
+[node name="Obstacle11" parent="." instance=ExtResource("9_eu26k")]
+position = Vector2(1709, -373)
+
+[node name="Obstacle01" parent="." instance=ExtResource("11_p5lem")]
+position = Vector2(1720, 379)

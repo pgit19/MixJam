@@ -3,7 +3,7 @@ class_name Bullet extends Node2D
 var start_position : Vector2
 var target_position : Vector2
 var bullet_speed_scale: float
-var bullet_duration: float = 700
+var bullet_duration: float = 1000
 
 @onready var bullet_animation = $BULLETANIMATION
 @onready var bullet_timer = $bullet_timer

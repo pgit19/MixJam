@@ -35,5 +35,5 @@ var fuel : float:
 	get:
 		return fuel
 
-var move_speed : float = 300
+var move_speed : float = 450
 var rotation_speed : float = 5
