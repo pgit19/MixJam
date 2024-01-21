@@ -5,10 +5,29 @@ extends Character
 @export var mortar_rotation_speed: float = 3.0
 @onready var mortar = $Mortar
 @onready var player_ray_cast = $PlayerRayCast
+@onready var health_bar = $HealthBarContainer/HealthBar
 var is_rotating: bool = false
+var hp = 100
 
 const bullet_scene = preload("res://scenes/bullet.tscn")
 
+
+func _ready():
+	CombatUtils.character_damaged.connect(_on_character_damaged)
+	set_up_health_bar()
+
+
+func set_up_health_bar():
+	health_bar.set_max(hp)
+	health_bar.set_value(hp)
+
+
+func _on_character_damaged(damage : float, p_character : Character):
+	if p_character == self:
+		hp = max(0, hp - damage)
+		health_bar.set_value(hp)
+		if hp == 0:
+			queue_free()
 
 
 func rotate_towards_approx_position(approx_position, delta):

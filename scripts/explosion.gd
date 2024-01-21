@@ -10,9 +10,11 @@ func _ready():
 
 
 func calculate_damage(p_character : Character):
-	var damage = 100
-	var distance = (p_character.position - position).length()
-	if distance < 10: 
-		distance = 0
-	damage = clamp(damage - distance, 0, 100)
+	var distance = max(0, (p_character.position - position).length() - 80)
+	var damage
+	if distance == 0:
+		damage = 80
+	else:
+		var ratio = distance / 300
+		damage = lerp(80, 1, ratio)
 	CombatUtils.damage_character(damage, p_character)
