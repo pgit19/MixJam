@@ -16,7 +16,9 @@ func get_player_position():
 
 func _on_turn_started():
 	print("Enemy Turn Started")
-	#TODO: Enemy turn
-	await get_tree().create_timer(1).timeout
+	for i in get_children():
+		#i.shoot()
+		await get_tree().create_timer(0.5).timeout
+
 	print("Enemy turn ended")
 	TurnManager.end_turn()

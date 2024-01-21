@@ -6,6 +6,8 @@ enum State {MOVING, SHOOTING, INACTIVE}
 @onready var turret = $Turret
 @onready var tank = $Tank
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var windup_key = $Tank/WINDUP_KEY
+@onready var tank_base = $Tank/TANKBASE
 
 var direction := Vector2.RIGHT
 var current_state := State.MOVING
@@ -17,6 +19,7 @@ func _ready():
 	PlayerStats.health = PlayerStats.max_health
 	PlayerStats.fuel = PlayerStats.max_fuel
 	audio_player.play()
+	windup_key.play()
 
 
 func _physics_process(delta):
@@ -30,6 +33,10 @@ func _physics_process(delta):
 			handle_turret_rotation(delta)
 		handle_shot_input()
 		move_and_slide()
+
+func _process(_delta):
+	determine_windup_key_speed()
+	handle_tracks_stop()
 
 
 func handle_turret_rotation(delta):
@@ -49,8 +56,11 @@ func drive_logic(delta):
 
 	if Input.is_action_pressed("w"):
 		motion.y -= 1
+		tank_base.play()
+		
 	if Input.is_action_pressed("s"):
 		motion.y += 1
+		tank_base.play_backwards()
 
 	if Input.is_action_pressed("a"):
 		tank.rotation -= PlayerStats.rotation_speed * delta
@@ -65,6 +75,7 @@ func shoot():
 	var shot_instance : Shot = Preloads.shot_scene.instantiate()
 	shot_instance.set_up(self, turret.global_transform.x)
 	get_parent().add_child(shot_instance)
+	windup_key.stop()
 
 
 func release_shot():
@@ -84,8 +95,18 @@ func use_fuel(delta : float):
 		audio_player.stop()
 
 
+func determine_windup_key_speed():
+	windup_key.set_speed_scale((PlayerStats.fuel / 100))
+
+
+func handle_tracks_stop():
+	if velocity == Vector2.ZERO:
+		tank_base.stop()
+
+
 func _on_turn_started():
 	print("Player Turn Started")
 	PlayerStats.fuel = PlayerStats.max_fuel
 	current_state = State.MOVING
 	audio_player.play()
+	windup_key.play()

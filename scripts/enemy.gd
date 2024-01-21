@@ -7,18 +7,8 @@ extends Character
 @onready var player_ray_cast = $PlayerRayCast
 var is_rotating: bool = false
 
+const bullet_scene = preload("res://scenes/bullet.tscn")
 
-
-func approximate_player_pos() -> Vector2:
-	var player_pos = get_parent().get_player_position()
-	var distance_to_bunker = player_pos.distance_to(get_global_position())
-	var radius = clamp(distance_to_bunker, min_distance, max_distance)
-
-	var random_angle = randf() * 0.5 * PI
-	var random_radius = randf() * radius
-	var approximate_position = get_parent().get_player_position() + Vector2(cos(random_angle), sin(random_angle)) * random_radius
-
-	return approximate_position
 
 
 func rotate_towards_approx_position(approx_position, delta):
@@ -29,17 +19,21 @@ func rotate_towards_approx_position(approx_position, delta):
 	
 func _process(delta):
 	point_ray_cast_towards_player()
-	ai_behaviour(delta)
+	rotate_towards_approx_position(get_parent().get_player_position(), delta)
 
-
-func ai_behaviour(delta):
-	var player_pos = approximate_player_pos()
-	rotate_towards_approx_position(player_pos, delta)
-
-
-func release_shot():
-	shot_released.emit()
-	
 
 func point_ray_cast_towards_player():
 	player_ray_cast.set_target_position(get_parent().get_player_position() - position)
+
+
+func shoot():
+	var can_see_player : bool = false if player_ray_cast.is_colliding() else true
+	var shot_position = get_parent().get_player_position()
+	instantiate_bullet(shot_position)
+
+
+func instantiate_bullet(p_target_position):
+	var bullet_instance = bullet_scene.instantiate()
+	bullet_instance.set_up(position, p_target_position)
+	get_parent().add_child(bullet_instance)
+	pass
