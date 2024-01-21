@@ -10,6 +10,7 @@
 script = ExtResource("1_cq1ay")
 
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("1_ng4qr")]
+zoom = Vector2(0.5, 0.5)
 
 [node name="LevelContainer" parent="." instance=ExtResource("3_1t860")]
 
