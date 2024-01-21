@@ -82,9 +82,11 @@ func release_shot():
 	shot_released.emit()
 	print("Player Turn ended")
 	AudioManager.play_sound_at_position(shot_sound, position)
-	TurnManager.end_turn()
 	current_state = State.INACTIVE
 	audio_player.stop()
+	await get_tree().create_timer(2).timeout
+	TurnManager.end_turn()
+
 
 
 func use_fuel(delta : float):
