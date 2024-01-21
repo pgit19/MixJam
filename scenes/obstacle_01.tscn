@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4b6bnry1qpth"]
+
+[ext_resource type="Texture2D" uid="uid://driu7loj2k5k1" path="res://assets/Obstacles/obstacle_01.png" id="1_6rhj0"]
+
+[node name="Obstacle01" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Obstacle01" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("1_6rhj0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-14, -103, 96, -64, 41, 94, 17, 101, -75, 68)
