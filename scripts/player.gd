@@ -18,8 +18,7 @@ func _ready():
 	#TODO: Make able to update sound position
 	PlayerStats.health = PlayerStats.max_health
 	PlayerStats.fuel = PlayerStats.max_fuel
-	audio_player.play()
-	windup_key.play()
+	TurnManager.start_game()
 
 
 func _physics_process(delta):

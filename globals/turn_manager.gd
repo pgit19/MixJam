@@ -8,8 +8,13 @@ var current_turn : Enums.Turn
 func _ready():
 	reset()
 
+func start_game():
+	current_turn = Enums.Turn.PLAYER
+	player_turn_started.emit()
+
 func reset():
 	current_turn = Enums.Turn.PLAYER
+	
 
 func end_turn():
 	match current_turn:
