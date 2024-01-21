@@ -43,9 +43,8 @@ size_flags_stretch_ratio = 0.1
 layout_mode = 2
 size_flags_vertical = 3
 text = "Use  W-A-S-D to move.
-Moving consumes more fuel than doing nothing.
-End your turn with a shoot.
-Hold the (left mouse button  to aim to mouse position direktion"
+Your energy depletes over time and while you move.
+Shooting ends your turn."
 label_settings = SubResource("LabelSettings_johkd")
 horizontal_alignment = 1
 

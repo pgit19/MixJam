@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjm8k05cuagwg"]
+[gd_scene load_steps=10 format=3 uid="uid://cjm8k05cuagwg"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_xfwm4"]
+[ext_resource type="Texture2D" uid="uid://blwj1q2eexr2d" path="res://assets/bullet_shadow.png" id="2_k0jku"]
 [ext_resource type="Texture2D" uid="uid://c4e4ebvnov1o" path="res://assets/animation/mortar/mortar_shell_1.png" id="2_s28ce"]
 [ext_resource type="Texture2D" uid="uid://b6locjtd21250" path="res://assets/animation/mortar/mortar_shell_2.png" id="3_dbjqn"]
 [ext_resource type="Texture2D" uid="uid://dixtkooela515" path="res://assets/animation/mortar/mortar_shell_3.png" id="4_qg4lc"]
@@ -36,6 +37,12 @@ animations = [{
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_xfwm4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.172549, 0.105882, 0.180392, 0.215686)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_k0jku")
 
 [node name="BULLETANIMATION" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

@@ -15,4 +15,4 @@ func _process(delta):
 
 
 func open(delta):
-	position = position.lerp(initial_position + Vector2(0, -200), open_speed * delta)
+	position = position.lerp(initial_position + Vector2(0, -500), open_speed * delta)
