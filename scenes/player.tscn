@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ax4d7"]
 [ext_resource type="AudioStream" uid="uid://jt2hrjeelogj" path="res://assets/mixkit-game-gun-shot-1662.mp3" id="2_4wvpi"]
-[ext_resource type="AudioStream" uid="uid://j2ooof5xi1ea" path="res://assets/rattling-toy-timer-101soundboards.mp3" id="2_h4oub"]
 [ext_resource type="Texture2D" uid="uid://b855bvumjv6un" path="res://assets/tank_base.png" id="2_mo8e1"]
+[ext_resource type="AudioStream" uid="uid://dimmdpd50gdud" path="res://assets/tank_sound.mp3" id="2_vyu36"]
 [ext_resource type="Texture2D" uid="uid://8ihp67kj6g5m" path="res://assets/tank_turret.png" id="3_03dmv"]
 [ext_resource type="Script" path="res://scripts/player_health_bar_manager.gd" id="4_5wn7j"]
 [ext_resource type="PackedScene" uid="uid://bft4bqnufpdtk" path="res://scenes/health_bar.tscn" id="4_k5v70"]
@@ -13,7 +13,7 @@ radius = 88.0227
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ax4d7")
-engine_sound = ExtResource("2_h4oub")
+engine_sound = ExtResource("2_vyu36")
 shot_sound = ExtResource("2_4wvpi")
 
 [node name="Tank" type="Node2D" parent="."]
