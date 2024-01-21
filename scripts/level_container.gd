@@ -18,7 +18,6 @@ func determine_level(p_level : Enums.Level):
 
 
 func set_up_level(p_level_scene : PackedScene):
-	print("Added Level ", p_level_scene)
 	var level_instance : Level = p_level_scene.instantiate()
 	level_instance.player_finished_level.connect(func(): player_finished_level.emit())
 	add_child(level_instance)

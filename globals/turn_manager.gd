@@ -2,6 +2,7 @@ extends Node
 
 signal player_turn_started
 signal enemy_turn_started
+signal level_finished
 
 var current_turn : Enums.Turn
 
@@ -14,7 +15,14 @@ func start_game():
 
 func reset():
 	current_turn = Enums.Turn.PLAYER
-	
+
+
+func set_level_finished():
+	print("Level finished")
+	current_turn = Enums.Turn.PLAYER
+	level_finished.emit()
+	player_turn_started.emit()
+
 
 func end_turn():
 	match current_turn:

@@ -6,7 +6,7 @@ var direction : Vector2
 var current_target_position : Vector2
 var crosshair_move_speed : float = 500
 
-const max_shot_distance = 800
+const max_shot_distance = 2000
 const crosshair_acceleration_factor = 1.03
 
 

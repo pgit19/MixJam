@@ -15,11 +15,11 @@ func get_player_position():
 
 
 func _on_turn_started():
-	print("Enemy Turn Started")
-	for i in get_children():
-		i.shoot()
-		await get_tree().create_timer(0.5).timeout
-
-	await get_tree().create_timer(2).timeout
-	print("Enemy turn ended")
-	TurnManager.end_turn()
+	if get_child_count() == 0:
+		TurnManager.set_level_finished()
+	else:
+		for i in get_children():
+			i.shoot()
+			await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(2).timeout
+		TurnManager.end_turn()

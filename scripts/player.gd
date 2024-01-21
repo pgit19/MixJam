@@ -12,9 +12,12 @@ enum State {MOVING, SHOOTING, INACTIVE}
 var direction := Vector2.RIGHT
 var current_state := State.MOVING
 
+var level_is_finished : bool = false
+
 
 func _ready():
 	TurnManager.player_turn_started.connect(_on_turn_started)
+	TurnManager.level_finished.connect(func(): level_is_finished = true)
 	#TODO: Make able to update sound position
 	PlayerStats.health = PlayerStats.max_health
 	PlayerStats.fuel = PlayerStats.max_fuel
@@ -80,20 +83,21 @@ func shoot():
 func release_shot():
 	current_state = State.MOVING
 	shot_released.emit()
-	print("Player Turn ended")
 	AudioManager.play_sound_at_position(shot_sound, position)
-	current_state = State.INACTIVE
-	audio_player.stop()
-	await get_tree().create_timer(2).timeout
-	TurnManager.end_turn()
+	if not level_is_finished:
+		current_state = State.INACTIVE
+		audio_player.stop()
+		await get_tree().create_timer(2).timeout
+		TurnManager.end_turn()
 
 
 
 func use_fuel(delta : float):
-	var fuel_usage_per_second = 10 if velocity == Vector2.ZERO else 30
-	PlayerStats.fuel -= fuel_usage_per_second * delta
-	if PlayerStats.fuel <= 0:
-		audio_player.stop()
+	if not level_is_finished:
+		var fuel_usage_per_second = 10 if velocity == Vector2.ZERO else 30
+		PlayerStats.fuel -= fuel_usage_per_second * delta
+		if PlayerStats.fuel <= 0:
+			audio_player.stop()
 
 
 func determine_windup_key_speed():
@@ -106,7 +110,6 @@ func handle_tracks_stop():
 
 
 func _on_turn_started():
-	print("Player Turn Started")
 	PlayerStats.fuel = PlayerStats.max_fuel
 	current_state = State.MOVING
 	audio_player.play()
