@@ -13,9 +13,6 @@ func set_up(p_signal_host : Character, p_direction : Vector2):
 	p_signal_host.shot_released.connect(_on_shot_released, 4)
 
 
-func _ready():
-	pass
-
 
 func _physics_process(delta):
 	move_target_position_along_direction(delta)
@@ -23,7 +20,9 @@ func _physics_process(delta):
 
 
 func move_target_position_along_direction(delta : float):
-	current_target_position += direction * crosshair_move_speed * delta
+	var exp_weight_factor = position.distance_to(current_target_position) * 0.003
+	
+	current_target_position += direction * crosshair_move_speed * exp(exp_weight_factor * 0.5) * delta
 
 
 func set_crosshair_sprite_to_target_position():
