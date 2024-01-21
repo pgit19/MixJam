@@ -6,6 +6,8 @@ extends Character
 @onready var mortar = $Mortar
 @onready var player_ray_cast = $PlayerRayCast
 @onready var health_bar = $HealthBarContainer/HealthBar
+@onready var view_line = $Line2D
+
 var is_rotating: bool = false
 var hp = 100
 
@@ -42,7 +44,13 @@ func _process(delta):
 
 
 func point_ray_cast_towards_player():
-	player_ray_cast.set_target_position(get_parent().get_player_position() - position)
+	var point_position = get_parent().get_player_position() - position
+	player_ray_cast.set_target_position(point_position)
+	view_line.set_point_position(1, point_position)
+	if player_ray_cast.is_colliding():
+		view_line.set_default_color(Color("457cd6"))
+	else:
+		view_line.set_default_color(Color("94353d"))
 
 
 func shoot():

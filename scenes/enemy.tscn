@@ -46,3 +46,8 @@ shape = SubResource("CircleShape2D_jvby0")
 
 [node name="PlayerRayCast" type="RayCast2D" parent="."]
 collision_mask = 2
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 100, 100)
+width = 5.0
+default_color = Color(0.580392, 0.207843, 0.239216, 1)
