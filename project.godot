@@ -35,6 +35,7 @@ window/stretch/mode="viewport"
 
 [gui]
 
+theme/custom="res://assets/default_theme.tres"
 theme/custom_font="res://assets/Big_Bottom_Typeface_Normal.ttf"
 
 [input]
