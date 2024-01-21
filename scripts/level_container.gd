@@ -1,22 +1,26 @@
 extends Node2D
 
+signal player_finished_level
+
+
 func _ready():
-	set_up_level(LevelManager.current_level)
+	determine_level(LevelManager.current_level)
 
 
-func set_up_level(p_level : Enums.Level):
+func determine_level(p_level : Enums.Level):
 	match p_level:
 		Enums.Level.ONE:
-			update_level(Preloads.level_1_scene)
+			set_up_level(Preloads.level_1_scene)
 		Enums.Level.TWO:
-			update_level(Preloads.level_2_scene)
+			set_up_level(Preloads.level_2_scene)
 		Enums.Level.THREE:
-			update_level(Preloads.level_3_scene)
+			set_up_level(Preloads.level_3_scene)
 
 
-func update_level(p_level_scene : PackedScene):
+func set_up_level(p_level_scene : PackedScene):
 	print("Added Level ", p_level_scene)
-	for i in get_children():
-		i.queue_free()
-	var level_instance = p_level_scene.instantiate()
+	var level_instance : Level = p_level_scene.instantiate()
+	level_instance.player_finished_level.connect(func(): player_finished_level.emit())
 	add_child(level_instance)
+
+

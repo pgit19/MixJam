@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://nmxjlf5pu4lj"]
+[gd_scene load_steps=4 format=3 uid="uid://nmxjlf5pu4lj"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_js25i"]
+[ext_resource type="PackedScene" uid="uid://632cjv3mdkeq" path="res://scenes/finish_area.tscn" id="2_h2wyp"]
+[ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="3_w3l66"]
 
 [node name="Level3" type="Node2D"]
+script = ExtResource("1_js25i")
+
+[node name="FinishArea" parent="." instance=ExtResource("2_h2wyp")]
+position = Vector2(2, -304)
+
+[node name="EnemyContainer" parent="." instance=ExtResource("3_w3l66")]

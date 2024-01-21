@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct8yxoe8s2d08"]
+[gd_scene load_steps=6 format=3 uid="uid://ct8yxoe8s2d08"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_cq1ay"]
 [ext_resource type="PackedScene" uid="uid://c58vxsxhuimqu" path="res://scenes/player_follow_camera.tscn" id="1_ng4qr"]
 [ext_resource type="PackedScene" uid="uid://xfhvn2seivdw" path="res://scenes/player.tscn" id="1_tqfee"]
 [ext_resource type="PackedScene" uid="uid://bdnfxge2xadmy" path="res://scenes/level_container.tscn" id="3_1t860"]
 [ext_resource type="PackedScene" uid="uid://cuqsfqc07feiu" path="res://scenes/ui.tscn" id="3_7v28a"]
-[ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="4_fdonq"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_cq1ay")
@@ -13,8 +12,6 @@ script = ExtResource("1_cq1ay")
 [node name="PlayerFollowCamera" parent="." instance=ExtResource("1_ng4qr")]
 
 [node name="LevelContainer" parent="." instance=ExtResource("3_1t860")]
-
-[node name="EnemyContainer" parent="." instance=ExtResource("4_fdonq")]
 
 [node name="Player" parent="." instance=ExtResource("1_tqfee")]
 

@@ -19,3 +19,7 @@ const level_1_scene = preload("res://scenes/level_1.tscn")
 const level_2_scene = preload("res://scenes/level_2.tscn")
 
 const level_3_scene = preload("res://scenes/level_3.tscn")
+
+const level_passed_scene = preload("res://scenes/level_passed_screen.tscn")
+
+const game_finished_scene = preload("res://scenes/game_finished_screen.tscn")

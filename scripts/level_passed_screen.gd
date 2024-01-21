@@ -14,6 +14,7 @@ func _ready():
 
 func _on_next_level_button_pressed():
 	LevelManager.current_level += 1
+	request_scene_change(Enums.SceneInterfaceType.GAME)
 
 
 func _on_back_to_menu_button_pressed():

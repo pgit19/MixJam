@@ -1,13 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bukj8yt4hkab3"]
+[gd_scene load_steps=2 format=3 uid="uid://bukj8yt4hkab3"]
 
 [ext_resource type="Script" path="res://scripts/enemy_container.gd" id="1_rdj44"]
-[ext_resource type="PackedScene" uid="uid://b703qsixvs1ac" path="res://scenes/enemy.tscn" id="2_oajtk"]
 
 [node name="EnemyContainer" type="Node2D"]
 script = ExtResource("1_rdj44")
-
-[node name="Enemy" parent="." instance=ExtResource("2_oajtk")]
-position = Vector2(681, -571)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_oajtk")]
-position = Vector2(1172, 29)

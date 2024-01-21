@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5h4f7wxfh7oc"]
+
+[ext_resource type="Script" path="res://scripts/game_finished_screen.gd" id="1_xryvw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_n1nof"]
+
+[node name="GameFinishedScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xryvw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+modulate = Color(0.184314, 0.168627, 0.360784, 1)
+position = Vector2(962.25, 543.75)
+scale = Vector2(1925.5, 1088.5)
+mesh = SubResource("QuadMesh_n1nof")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "You finished the Game"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Good Job!
+Thanks for playing
+by Max, Philipp and Niklas"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"

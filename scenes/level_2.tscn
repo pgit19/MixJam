@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://cbdem11unsgvn"]
+[gd_scene load_steps=4 format=3 uid="uid://cbdem11unsgvn"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_pnx3o"]
+[ext_resource type="PackedScene" uid="uid://632cjv3mdkeq" path="res://scenes/finish_area.tscn" id="2_wk1ds"]
+[ext_resource type="PackedScene" uid="uid://bukj8yt4hkab3" path="res://scenes/enemy_container.tscn" id="3_pr8c8"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_pnx3o")
+
+[node name="FinishArea" parent="." instance=ExtResource("2_wk1ds")]
+position = Vector2(-304, -4)
+
+[node name="EnemyContainer" parent="." instance=ExtResource("3_pr8c8")]
